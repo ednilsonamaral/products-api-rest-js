@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 const index = require('./routes/index');
-// const productRoute = require('./routes/product.routes');
+const CategoryRoutes = require('./routes/category.routes');
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +17,6 @@ app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
 app.use(index);
-// app.use('/api/', productRoute);
+app.use('/api/', CategoryRoutes);
 
 module.exports = app;

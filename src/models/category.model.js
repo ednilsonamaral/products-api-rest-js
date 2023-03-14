@@ -1,8 +1,10 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-const Category = sequelize.define('categories', {
+const database = require('../config/database');
+
+const Category = database.define('categories', {
     id: {
-        type: sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
@@ -16,12 +18,13 @@ const Category = sequelize.define('categories', {
 
     createdAt: {
         field: 'created_at',
-        type: Sequelize.DATE,
+        type: DataTypes.DATE,
+        default: new Date(),
     },
 
     updatedAt: {
         field: 'updated_at',
-        type: Sequelize.DATE,
+        type: DataTypes.DATE
     }
 });
 

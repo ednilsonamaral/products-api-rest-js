@@ -9,7 +9,11 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     dialect: 'postgres'
 });
 
-const db = await sequelize.authenticate();
-console.log('Connection has been established successfully.');
+try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully.');    
+} catch (error) {
+    console.log('error db: ', error);
+}
 
-module.exports = db;
+module.exports = sequelize;
