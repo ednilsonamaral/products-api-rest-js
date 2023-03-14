@@ -1,6 +1,17 @@
 const Category = require('../models/category.model');
 
 exports.create = async (req, res) => {
+    /*
+    #swagger.description = 'Route for create new category'
+
+    #swagger.parameters['name'] = {
+        description: 'Name of category',
+        type: 'string',
+        required: true,
+        in: 'body',
+        example: 'Copo de vidro',
+    }
+    */
     const { body } = req;
 
     try {
@@ -16,6 +27,10 @@ exports.create = async (req, res) => {
 };
 
 exports.getAll = async (req, res) => {
+    /*
+    #swagger.description = 'Route for list all categories'
+    */
+
     try {
         const response = await Category.findAndCountAll();
         res.status(200).json({
@@ -29,6 +44,9 @@ exports.getAll = async (req, res) => {
 };
 
 exports.getById = async (req, res) => {
+    /*
+    #swagger.description = 'Route for list one category, search by ID param'
+    */
     const { id } = req.params;
 
     try {
@@ -41,6 +59,9 @@ exports.getById = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+    /*
+    #swagger.description = 'Route for update existing category'
+    */
     let { body } = req;
     body.updated_at = new Date();
     
@@ -57,6 +78,9 @@ exports.update = async (req, res) => {
 };
 
 exports.remove = async (req, res) => {
+    /*
+    #swagger.description = 'Route for delete existing category'
+    */
     const { id } = req.params;
     const query = { where: { id } };
 

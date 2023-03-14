@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "lint": "eslint --ext .js,.html -f ./node_modules/eslint-friendly-formatter . --fix",
-    "start": "node server.js"
+    "start": "node server.js",
+    "swagger-autogen": "node src/swagger.js"
   },
   "engines": {
     "node": ">=16.16.0"
@@ -34,7 +35,9 @@
     "path": "^0.12.7",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.29.3"
+    "sequelize": "^6.29.3",
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "eslint": "^8.36.0",

@@ -2,7 +2,18 @@ const Fees = require('../models/fees.model');
 const Product = require('../models/product.model');
 
 exports.getFeesByProduct = async (req, res) => {
-    const { num_parcelas } = req.query || 12;
+    /*
+    #swagger.description = 'Route for calculate installments value'
+
+    #swagger.parameters['num_parcelas'] = {
+        description: 'Number of installments',
+        type: 'number',
+        required: true,
+        in: 'query',
+        example: 5,
+    }
+    */
+    const { num_parcelas } = req.query || 12; // 12 as default if not specified
     const { idProduct } = req.params;
     const product = await getProduct(idProduct);
     if (!product) {

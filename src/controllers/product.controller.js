@@ -1,6 +1,9 @@
 const Product = require('../models/product.model');
 
 exports.create = async (req, res) => {
+    /*
+    #swagger.description = 'Route for create new product'
+    */
     const { body } = req;
 
     try {
@@ -16,6 +19,7 @@ exports.create = async (req, res) => {
 };
 
 exports.getAll = async (req, res) => {
+    /* #swagger.description = 'Route for get all products' */
     try {
         const response = await Product.findAndCountAll();
         res.status(200).json({
@@ -29,6 +33,7 @@ exports.getAll = async (req, res) => {
 };
 
 exports.getById = async (req, res) => {
+    /* #swagger.description = 'Route for get one product by ID' */
     const { id } = req.params;
 
     try {
@@ -41,6 +46,7 @@ exports.getById = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+    /* #swagger.description = 'Route for update existing product' */
     let { body } = req;
     body.updated_at = new Date();
     
@@ -57,6 +63,7 @@ exports.update = async (req, res) => {
 };
 
 exports.remove = async (req, res) => {
+    /* #swagger.description = 'Route for remove existing product' */
     const { id } = req.params;
     const query = { where: { id } };
 
