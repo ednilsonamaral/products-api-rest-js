@@ -1,0 +1,45 @@
+{
+  "name": "products-api-rest",
+  "version": "1.0.0",
+  "description": "A simple API Rest using Node.js, Express, PostgreSQL, Sequelize, Swagger, Unit tests",
+  "author": "Ednilson Amaral <ednilsonamaral.ti@gmail.com>",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "lint": "eslint --ext .js,.html -f ./node_modules/eslint-friendly-formatter . --fix",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16.16.0"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "nodejs",
+    "express",
+    "postegresql",
+    "swagger",
+    "unit",
+    "tests"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-promise-router": "^4.1.1",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.21",
+    "sequelize-cli": "^6.6.0"
+  }
+}
