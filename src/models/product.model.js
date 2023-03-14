@@ -1,10 +1,22 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-const Product = sequelize.define('product', {
+const database = require('../config/database');
+
+const Product = database.define('product', {
     id: {
-        type: sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
+    },
+
+    id_category: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'categories',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
     },
 
     name: {
@@ -28,12 +40,12 @@ const Product = sequelize.define('product', {
 
     createdAt: {
         field: 'created_at',
-        type: Sequelize.DATE,
+        type: DataTypes.DATE,
     },
 
     updatedAt: {
         field: 'updated_at',
-        type: Sequelize.DATE,
+        type: DataTypes.DATE,
     }
 });
 
