@@ -34,4 +34,4 @@ In another tab, follow the steps:
 
 Then, you can open in your browser the documentation with this URL `http://localhost:3000/api/v1/docs/`.
 
-Also, in root directory, we have the file `.postman_collection.json`. You can use it and import in your Postman to tests all endpoints.
+Also, in root directory, we have the file `postman_collection.json`. You can use it and import in your Postman to tests all endpoints.
